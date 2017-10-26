@@ -26,7 +26,7 @@ class SearchBar extends Component{
           <Button
             raised
             buttonStye={buttonStyle}
-            title='Search'
+            title={this.props.loading ? 'Loading...' : 'Search'}
             onPress={() => this.props.onPressSearch(this.state.term)}
            />
         </View>
