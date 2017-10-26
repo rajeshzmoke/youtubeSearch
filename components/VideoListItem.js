@@ -4,9 +4,12 @@ import {
   Text,
   Image
   } from 'react-native';
+  import { Card } from 'react-native-elements';
 
 const VideoListItem = ({ video }) => {
-  const { imageStyle } = styles;
+  const {
+    imageStyle
+   } = styles;
   const {
     title,
     channelTitle,
@@ -18,13 +21,15 @@ const VideoListItem = ({ video }) => {
 
   return (
     <View>
-      <Image
-        style={imageStyle}
-        source = {{ uri: url }}
-      />
-      <Text>{title}</Text>
-      <Text>{channelTitle}</Text>
-      <Text>{description}</Text>
+      <Card>
+        <Image
+          style={imageStyle}
+          source = {{ uri: url }}
+        />
+        <Text>{title}</Text>
+        <Text>{channelTitle}</Text>
+        <Text>{description}</Text>
+      </Card>
     </View>
   );
 };
