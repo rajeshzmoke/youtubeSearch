@@ -1,17 +1,32 @@
 
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Header } from 'react-native-elements';
+import AppHeader from './components/AppHeader';
+import SearchBar from './components/SearchBar';
+import YTSearch from 'youtube-api-search';
 
-export default class App extends Component<{}> {
+const API_KEY = 'AIzaSyByuCz-NnIsB3e_J7q6fKYFr0R919uekWk';
+
+export default class App extends Component {
+onPressSearch = term => {
+  this.searchYT(term);
+}
+
+searchYT = term => {
+  YTSearch({ key: API_KEY, term }, videos => {
+    console.log(videos);
+  });
+}
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }} >
-        <Header
-        centerComponent={{ text: 'Youtube Search', style: { color: '#f8f8ff' } }}
-        outerContainerStyles={{ backgroundColor: '#E62117' }}
-        />
+        <AppHeader
+          headerText = 'Youtube Search'
+         />
+        <SearchBar
+          onPressSearch={this.onPressSearch}
 
+         />
       </View>
     );
   }
