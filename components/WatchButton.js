@@ -7,7 +7,7 @@ const WatchButton = ({ videoId }) => (
     small
     raised
     title="Watch on Youtube"
-    //icon={{name: ''}}
+    //icon={{name: 'play_arrow'}}
     containerViewStyle={{ marginTop: 10 }}
     backgroundColor='#E62117'
     onPress ={() => {
