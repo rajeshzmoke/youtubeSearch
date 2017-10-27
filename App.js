@@ -14,6 +14,10 @@ export default class App extends Component {
     videos: []
   }
 
+ componentWillMount(){
+  this.searchYT()
+ }
+
   onPressSearch = term => {
     this.searchYT(term);
   }

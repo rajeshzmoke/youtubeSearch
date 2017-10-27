@@ -8,7 +8,12 @@ import {
 
 const VideoListItem = ({ video }) => {
   const {
-    imageStyle
+    imageStyle,
+    cardStyle,
+    contentStyle,
+    titleStyle,
+    channelTitleStyle,
+    descriptionStyle
    } = styles;
   const {
     title,
@@ -21,19 +26,48 @@ const VideoListItem = ({ video }) => {
 
   return (
     <View>
-      <Card>
+      <Card titleStyle={titleStyle} title={title} containerStyle={cardStyle}>
         <Image
           style={imageStyle}
           source = {{ uri: url }}
         />
-        <Text>{title}</Text>
-        <Text>{channelTitle}</Text>
-        <Text>{description}</Text>
+        <View style={contentStyle}>
+          {/* <Text style={titleStyle}>
+            {title}
+          </Text> */}
+          <Text style={channelTitleStyle}>
+            {channelTitle}
+          </Text>
+          <Text style={descriptionStyle}>
+            {description}
+          </Text>
+        </View>
       </Card>
     </View>
   );
 };
 const styles = {
+  cardStyle:{
+    padding: 5
+  },
+  contentStyle:{
+    alignSelf:'stretch',
+    height: 100
+  },
+  titleStyle:{
+    fontSize: 15,
+    marginBottom: 5
+  },
+  channelTitleStyle:{
+    fontSize: 15,
+    color: '#000000',
+    marginBottom: 5,
+    alignSelf: 'flex-start'
+  },
+  descriptionStyle:{
+    fontSize:11,
+    alignSelf:'center'
+  },
   imageStyle:{
   alignSelf:'stretch',
   height:180
