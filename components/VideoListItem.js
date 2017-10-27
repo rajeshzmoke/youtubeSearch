@@ -4,7 +4,8 @@ import {
   Text,
   Image
   } from 'react-native';
-  import { Card } from 'react-native-elements';
+import { Card } from 'react-native-elements';
+import WatchButton from './WatchButton';
 
 const VideoListItem = ({ video }) => {
   const {
@@ -15,6 +16,7 @@ const VideoListItem = ({ video }) => {
     channelTitleStyle,
     descriptionStyle
    } = styles;
+
   const {
     title,
     channelTitle,
@@ -38,9 +40,12 @@ const VideoListItem = ({ video }) => {
           <Text style={channelTitleStyle}>
             {channelTitle}
           </Text>
+
           <Text style={descriptionStyle}>
             {description}
           </Text>
+
+          <WatchButton videoId={ video.id.videoId }/>
         </View>
       </Card>
     </View>
@@ -52,7 +57,7 @@ const styles = {
   },
   contentStyle:{
     alignSelf:'stretch',
-    height: 100
+    height: 120
   },
   titleStyle:{
     fontSize: 15,
