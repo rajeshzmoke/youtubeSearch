@@ -6,6 +6,6 @@ const AppHeader = ({headerText}) => ( //headerText === props.headerText
     centerComponent={{ text: headerText, style: { color: '#f8f8ff' } }}
     outerContainerStyles={{ backgroundColor: '#E62117' }}
     />
-  )
+  );
 
 export default AppHeader;

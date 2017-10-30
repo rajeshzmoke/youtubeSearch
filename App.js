@@ -14,8 +14,8 @@ export default class App extends Component {
     videos: []
   }
 
- componentWillMount(){
-  this.searchYT()
+ componentWillMount() {
+  this.searchYT();
  }
 
   onPressSearch = term => {
@@ -27,7 +27,7 @@ export default class App extends Component {
             this.setState({
               loading: false,
               videos
-             })
+             });
     });
   }
   render() {
@@ -36,12 +36,12 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }} >
         <AppHeader
-          headerText = 'Youtube Search'
-         />
+          headerText= 'Youtube Search'
+        />
         <SearchBar
-          loading={ this.state.loading }
-          onPressSearch={ this.onPressSearch }
-         />
+          loading={this.state.loading}
+          onPressSearch={this.onPressSearch}
+        />
          <VideoList videos={videos} />
       </View>
     );
